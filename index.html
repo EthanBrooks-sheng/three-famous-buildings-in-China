@@ -2,26 +2,191 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>华夏三筑</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华夏三筑 - 建筑艺术展示</title>
     <style>
-        img {
-            max-width: 100%; 
-            height: auto;
-            display: block;
-            margin: 20px 0;
+        /* 基础样式 */
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "STHeiti", sans-serif;
+            background-color: #f8f6f2; /* 宣纸感背景色 */
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 顶部大标题 */
+        header {
+            background: linear-gradient(rgba(140, 39, 33, 0.9), rgba(140, 39, 33, 0.9)), 
+                        url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+            color: #f1c40f; /* 皇家金 */
+            width: 100%;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-bottom: 5px solid #d4af37;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            letter-spacing: 12px;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            margin-top: 15px;
+            color: #fff;
+            font-size: 1.2em;
+            letter-spacing: 2px;
+        }
+
+        /* 容器布局 */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* 建筑卡片 */
+        .card {
+            background: #fff;
+            width: 350px;
+            border-radius: 4px; /* 方正感更符合古建气质 */
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        /* 图片区域 */
+        .image-box {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* 标签 */
+        .tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(140, 39, 33, 0.8);
+            color: white;
+            padding: 5px 15px;
+            font-size: 0.8em;
+            border-radius: 20px;
+        }
+
+        /* 内容区域 */
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-content h2 {
+            margin: 0;
+            color: #8c2721;
+            font-size: 1.8em;
+            border-bottom: 2px solid #f1c40f;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .card-content h3 {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .card-content p {
+            color: #777;
+            font-size: 0.95em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 0.9em;
+            background: #2c3e50;
+            color: #bdc3c7;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
-    <h1>华夏三筑</h1>
-    
-    <h3>紫禁雄筑</h3>
-    <img src="01.jpg" alt="紫禁城">
 
-    <h3>土楼环筑</h3>
-    <img src="02.jpg" alt="土楼">
+    <header>
+        <h1>华夏三筑</h1>
+        <p>紫禁雄筑 · 土楼环筑 · 颐和秀筑</p>
+    </header>
 
-    <h3>颐和秀筑</h3>
-    <img src="03.jpg" alt="颐和园">
+    <div class="container">
+        <div class="card">
+            <div class="image-box">
+                <img src="01.jpg" alt="紫禁城">
+                <span class="tag">皇家气象</span>
+            </div>
+            <div class="card-content">
+                <h2>紫禁雄筑</h2>
+                <h3>北京 · 紫禁城</h3>
+                <p>六百年红墙金瓦，汇聚天下建筑之大成。中轴线上的雄伟布局，彰显了东方文明对于秩序与空间的极致理解。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image-box">
+                <img src="02.jpg" alt="福建土楼">
+                <span class="tag">民居奇迹</span>
+            </div>
+            <div class="card-content">
+                <h2>土楼环筑</h2>
+                <h3>福建 · 客家土楼</h3>
+                <p>方圆之间尽显家族团圆。坚固的夯土外墙内，是人与自然和谐共生的独特社区，被誉为“世界民居建筑奇迹”。</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image-box">
+                <img src="03.jpg" alt="颐和园">
+                <span class="tag">园林典范</span>
+            </div>
+            <div class="card-content">
+                <h2>颐和秀筑</h2>
+                <h3>北京 · 颐和园</h3>
+                <p>借万寿山之势，引昆明湖之水。长廊绘彩，画舫凌波，不仅是皇家行宫，更是中国古典园林艺术的巅峰之作。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 华夏三筑作品集 · EthanBrooks-sheng
+    </footer>
+
 </body>
 </html>
